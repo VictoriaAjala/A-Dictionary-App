@@ -1,2 +1,2 @@
-# Dictionary-App
-A dictionary app using Html, CSS and JavaScript
+# Dictionary-app
+Build adictionary app using Html, CSS and JavaScript
