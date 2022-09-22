@@ -11,7 +11,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #027585;
+  background: #4d59fb;
 }
 .wrapper {
   width: 420px;
@@ -26,6 +26,7 @@ body {
 }
 .wrapper .search {
   margin: 35px 0 18px;
+  position: relative;
 }
 .search input {
   height: 53px;
@@ -46,6 +47,7 @@ body {
 .search :where(i, span) {
   position: absolute;
   top: 50%;
+  color: #999;
   transform: translateY(-50%);
 }
 .search i {
@@ -53,8 +55,8 @@ body {
   font-size: 16px;
   pointer-events: none;
 }
-.search input:focus i {
-  color: #027585;
+.search input:focus ~ i {
+  color: #4d59fb;
 }
 .search span {
   right: 15px;
@@ -70,15 +72,28 @@ body {
   color: #9a9a9a;
   margin: -3px 0 -10px;
 }
-.wrapper ul {
+.wrapper.active .info-text {
   display: none;
+}
+.info-text span {
+  font-weight: 500;
+}
+.wrapper ul {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+.wrapper.active ul {
+  height: 303px;
+  opacity: 1;
 }
 .wrapper ul li {
   display: flex;
   margin-bottom: 14px;
   padding-bottom: 17px;
   justify-content: space-between;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid rgb(168, 168, 168);
 }
 ul li:last-child {
   margin-bottom: 0px;
@@ -90,18 +105,25 @@ ul .word p {
   font-weight: 500;
 }
 ul .word span {
-  font-size: 22px;
+  font-size: 12px;
   color: #989898;
 }
 ul .word i {
-  font-size: 22px;
+  font-size: 15px;
   cursor: pointer;
   color: #999;
+}
+ul .content {
+  max-height: 215px;
+  overflow-y: auto;
+}
+ul .content::-webkit-scrollbar {
+  width: 0px;
 }
 .content li .details {
   padding-left: 10px;
   border-radius: 4px 0 0 4px;
-  border-left: 3px solid #027585;
+  border-left: 3px solid #4d59fb;
 }
 .content li .details p {
   font-size: 15px;
